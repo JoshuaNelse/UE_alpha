@@ -1,4 +1,4 @@
-<h4>TASK LIST</h4>
+<h4>TASK LIST <p> Before working on an item, update this file please! </p> </h4> 
 <hr/>
 
 Bryan
@@ -12,6 +12,11 @@ Josh
 <br />
 
 Keith
+> . . .
+
+<br />
+
+Matt
 > . . .
 
 <br />
