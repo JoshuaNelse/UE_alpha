@@ -7,7 +7,7 @@ Bryan
 <br />
 
 Josh 
-> . . .
+> ENV </strong> - create an enviroment (small town, like 2 - 3 buildings) 
 
 <br />
 
@@ -27,7 +27,7 @@ INSTRUCTIONS: just for the sake of covering ground, lets not move down the list 
 
 level 1
 
-> <strong > ENV </strong> - create an enviroment (small town, like 2 - 3 buildings) 
+> <strike><strong > ENV </strong> - create an enviroment (small town, like 2 - 3 buildings)</strike> <- JS
 
 > <strong > CB </strong> - create a simple damage / hit points functionality (a defeatable enemy, even a cube counts)
 
