@@ -14,7 +14,12 @@ class UE_ALPHA_REPOTESTING_API UOpenDoor : public UActorComponent
 	GENERATED_BODY()
 
 private:
+	UPROPERTY(EditAnywhere)
+	float DoorOpenRate = 3.0;
+	UPROPERTY(EditAnywhere)
+	float DoorCloseRate = 2.0;
 	FRotator DefaultRotation;
+	float MaxYawRotation;
 
 	UPROPERTY(VisibleAnywhere)
 	AActor* ComponentOwner;

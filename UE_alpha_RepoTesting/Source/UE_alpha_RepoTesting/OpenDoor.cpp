@@ -23,6 +23,7 @@ void UOpenDoor::BeginPlay()
 	this->ActorToOpen = GetWorld()->GetFirstPlayerController()->GetPawn();
 	this->ComponentOwner = GetOwner();
 	this->DefaultRotation = ComponentOwner->GetActorRotation();
+	this->MaxYawRotation = DefaultRotation.Yaw + 80;
 }
 
 
@@ -37,14 +38,25 @@ void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 
 void UOpenDoor::OpenDoor()
 {
-	FRotator RotationUpdateValue = (this->DefaultRotation);
-	RotationUpdateValue.Yaw += 80;
-	this->ComponentOwner->SetActorRotation(RotationUpdateValue);
+	FRotator CurrentRotation = this->ComponentOwner->GetActorRotation();
+	if (CurrentRotation.Yaw != this->MaxYawRotation)
+	{
+		(CurrentRotation.Yaw < this->MaxYawRotation)
+			? CurrentRotation.Yaw += this->DoorOpenRate
+			: CurrentRotation.Yaw = this->MaxYawRotation;
+		this->ComponentOwner->SetActorRotation(CurrentRotation);
+	}
 }
 
 void UOpenDoor::CloseDoor()
 {
-	if(this->ComponentOwner->GetActorRotation() != this->DefaultRotation)
-	this->ComponentOwner->SetActorRotation(this->DefaultRotation);
+	FRotator CurrentRotation = this->ComponentOwner->GetActorRotation();
+	if (CurrentRotation != this->DefaultRotation)
+	{
+		(CurrentRotation.Yaw > this->DefaultRotation.Yaw)
+			? CurrentRotation.Yaw -= this->DoorCloseRate
+			: CurrentRotation.Yaw = this->DefaultRotation.Yaw;
+		this->ComponentOwner->SetActorRotation(CurrentRotation);
+	}
 }
 
