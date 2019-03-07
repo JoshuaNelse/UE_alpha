@@ -7,7 +7,7 @@ Bryan
 <br />
 
 Josh 
-> ENV </strong> - create an enviroment (small town, like 2 - 3 buildings) 
+> INV / UI </strong> - display a simple UI (player hitpoints atleast)
 
 <br />
 
@@ -31,7 +31,7 @@ level 1
 
 > <strong > CB </strong> - create a simple damage / hit points functionality (a defeatable enemy, even a cube counts)
 
-> <strong > INV / UI </strong> - display a simple UI (player hitpoints atleast)
+> <strike><strong > INV / UI </strong> - display a simple UI (player hitpoints atleast)</strike> <- JS
 
 level 2 
 
